@@ -17,6 +17,7 @@ async def tts_edge(text):
     os.system("start output.mp3") 
 
 # camera
+
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Không mở được camera!")
