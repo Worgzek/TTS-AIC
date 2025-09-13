@@ -6,17 +6,17 @@ import edge_tts
 import os
 import cv2
 
-# Cấu hình Tesseract
+# Tesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-# Hàm TTS
+# TTS
 async def tts_edge(text):
     voice = "vi-VN-NamMinhNeural"
     communicate = edge_tts.Communicate(text, voice)
     await communicate.save("output.mp3")
-    os.system("start output.mp3")  # Windows. Mac/Linux có thể thay bằng khác
+    os.system("start output.mp3") 
 
-# Mở camera
+# camera
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Không mở được camera!")
@@ -34,8 +34,8 @@ while True:
 
     key = cv2.waitKey(1) & 0xFF
 
-    if key == ord('c'):  # nhấn 'c' để chụp và OCR
-        # Chuyển frame sang PIL Image
+    if key == ord('c'): 
+        
         img = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
 
         # OCR
@@ -50,7 +50,7 @@ while True:
         else:
             print("Không phát hiện chữ nào")
 
-    elif key == ord('q'):  # nhấn 'q' để thoát
+    elif key == ord('q'): 
         break
 
 cap.release()
