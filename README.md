@@ -16,10 +16,6 @@
 ##  cài đặt
 1. Python và Tesseract OCR  
    - Tải và cài Tesseract từ: [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki)  
-   - Ghi nhớ đường dẫn cài đặt, ví dụ:  
-     ```
-     C:\Program Files\Tesseract-OCR\tesseract.exe
-     ```
 
 2. thư viện cần thiết:
    ```bash
